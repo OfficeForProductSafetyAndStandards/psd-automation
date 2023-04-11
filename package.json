@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "cypress": "^12.9.0",
+    "prettier": "2.8.7",
+    "typescript": "^5.0.4"
+  },
+  "name": "psd-automation",
+  "version": "1.0.0",
+  "description": "Cypress specs for Product Safety Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "open": "cypress open",
+    "lint:write": "prettier --write **/*.{js,ts}",
+    "lint": "prettier --check **/*.{js,ts}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OfficeForProductSafetyAndStandards/psd-automation.git"
+  },
+  "author": "Office For Product Safety And Standards",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OfficeForProductSafetyAndStandards/psd-automation/issues"
+  },
+  "homepage": "https://github.com/OfficeForProductSafetyAndStandards/psd-automation#readme"
+}

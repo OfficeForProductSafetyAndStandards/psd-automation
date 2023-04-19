@@ -32,6 +32,8 @@ class LoginPage {
   static submit() {
     cy.get("#new_user > .govuk-button").click()
   }
+
+
 }
 
 export default LoginPage

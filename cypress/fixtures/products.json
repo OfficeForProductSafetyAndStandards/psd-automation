@@ -1,0 +1,15 @@
+{
+  "iphone": {
+    "product_code": 234,
+    "name": "iPhone XS MAX",
+    "webpage": "https://www.iphone.webpage",
+    "subcategory": "phone",
+    "category": "Communication and media equipment",
+    "description": "iphone description",
+    "country_of_origin": "United States",
+    "brand": "Apple",
+    "model": "iPhone XS MAX",
+    "barcode": "1234567890123",
+    "when_placed_on_market": "before_2021"
+  }
+}

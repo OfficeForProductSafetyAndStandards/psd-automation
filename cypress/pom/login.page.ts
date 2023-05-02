@@ -12,12 +12,15 @@ class LoginPage {
   }
 
   loginAsOpss() {
-    cy.fixture('users.json').as('users').then((users) => {
-      LoginPage.fillEmail(users.opss.email)
-      LoginPage.fillPassword(users.opss.password)
-    })
+    cy.session("opss", () => {
+      cy.visit("/sign-in")
+      cy.fixture('users.json').as('users').then((users) => {
+        this.fillEmail(users.opss.email)
+        this.fillPassword(users.opss.password)
+      })
 
-    LoginPage.submit()
+      this.submit()
+    })
     // UserDeclarationPage.confirmDeclaration()
   }
 
@@ -32,8 +35,6 @@ class LoginPage {
   submit() {
     cy.get("#new_user > .govuk-button").click()
   }
-
-
 }
 
 export default new LoginPage

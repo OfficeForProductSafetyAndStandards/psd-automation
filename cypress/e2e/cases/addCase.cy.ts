@@ -5,10 +5,10 @@ import ProductPage from "../../pom/product.page";
 import ProductFormPage from "../../pom/productForm.page";
 import ProductCreatedPage from "../../pom/products/productCreated.page";
 
-import NewCaseWhyPage from "../../pom/cases/newCaseWhy.page";
-import NewCaseWhyConcernPage from "../../pom/cases/newCaseWhyConcern.page";
-import NewCaseReferencePage from "../../pom/cases/newCaseReference.page";
-import NewCaseNamePage from "../../pom/cases/newCaseName.page";
+import NewCaseWhyPage from "../../pom/cases/new/newCaseWhy.page";
+import NewCaseWhyConcernPage from "../../pom/cases/new/newCaseWhyConcern.page";
+import NewCaseReferencePage from "../../pom/cases/new/newCaseReference.page";
+import NewCaseNamePage from "../../pom/cases/new/newCaseName.page";
 import CaseCreatedPage from "../../pom/cases/caseCreated.page";
 
 describe("Create case", () => {

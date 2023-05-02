@@ -22,4 +22,4 @@ class ProductDuplicateCheckPage {
   }
 }
 
-export default new ProductDuplicateCheckPage
+export default new ProductDuplicateCheckPage()

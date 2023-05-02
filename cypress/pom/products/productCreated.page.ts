@@ -2,12 +2,12 @@
 
 class ProductCreatedPage {
   assertPageTitle() {
-    cy.get('.govuk-panel__title').should("contain", "Product record created")
+    cy.get(".govuk-panel__title").should("contain", "Product record created")
   }
 
   clickToProductPage() {
-    cy.get('.govuk-body-l > .govuk-link').click()
+    cy.get(".govuk-body-l > .govuk-link").click()
   }
 }
 
-export default new ProductCreatedPage
+export default new ProductCreatedPage()

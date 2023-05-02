@@ -10,12 +10,12 @@ class CaseNewBusinessTypePage {
   }
 
   chooseOnlineMarketplace() {
-    cy.get("#business_type_online").check();
+    cy.get("#business_type_online").check()
   }
 
   clickContinue() {
-    cy.get('[data-cy="continue"]').click();
+    cy.get('[data-cy="continue"]').click()
   }
 }
 
-export default new CaseNewBusinessTypePage
+export default new CaseNewBusinessTypePage()

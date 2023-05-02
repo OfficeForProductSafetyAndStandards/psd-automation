@@ -14,10 +14,12 @@ class LoginPage {
   loginAsOpss() {
     cy.session("opss", () => {
       cy.visit("/sign-in")
-      cy.fixture('users.json').as('users').then((users) => {
-        this.fillEmail(users.opss.email)
-        this.fillPassword(users.opss.password)
-      })
+      cy.fixture("users.json")
+        .as("users")
+        .then((users) => {
+          this.fillEmail(users.opss.email)
+          this.fillPassword(users.opss.password)
+        })
 
       this.submit()
     })
@@ -37,4 +39,4 @@ class LoginPage {
   }
 }
 
-export default new LoginPage
+export default new LoginPage()

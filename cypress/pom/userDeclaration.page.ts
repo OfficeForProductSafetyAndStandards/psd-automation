@@ -11,4 +11,4 @@ class UserDeclarationPage {
   }
 }
 
-export default new UserDeclarationPage
+export default new UserDeclarationPage()

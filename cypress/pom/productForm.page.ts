@@ -1,5 +1,6 @@
 /// <reference types="cypress"/>
-import { Product } from '../support/types';
+
+import { Product } from "../support/types"
 
 class ProductFormPage {
   goto() {
@@ -29,7 +30,6 @@ class ProductFormPage {
 
     cy.get("[data-cy='save']").click()
   }
-
 }
 
-export default new ProductFormPage
+export default new ProductFormPage()

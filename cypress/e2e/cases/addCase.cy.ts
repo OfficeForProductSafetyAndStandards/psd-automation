@@ -1,20 +1,20 @@
 import LoginPage from "../../pom/login.page"
-import CasesPage from "../../pom/cases.page";
+import CasesPage from "../../pom/cases.page"
 
-import ProductPage from "../../pom/product.page";
-import ProductFormPage from "../../pom/productForm.page";
-import ProductCreatedPage from "../../pom/products/productCreated.page";
+import ProductPage from "../../pom/product.page"
+import ProductFormPage from "../../pom/productForm.page"
+import ProductCreatedPage from "../../pom/products/productCreated.page"
 
-import NewCaseWhyPage from "../../pom/cases/new/newCaseWhy.page";
-import NewCaseWhyConcernPage from "../../pom/cases/new/newCaseWhyConcern.page";
-import NewCaseReferencePage from "../../pom/cases/new/newCaseReference.page";
-import NewCaseNamePage from "../../pom/cases/new/newCaseName.page";
-import CaseCreatedPage from "../../pom/cases/caseCreated.page";
+import NewCaseWhyPage from "../../pom/cases/new/newCaseWhy.page"
+import NewCaseWhyConcernPage from "../../pom/cases/new/newCaseWhyConcern.page"
+import NewCaseReferencePage from "../../pom/cases/new/newCaseReference.page"
+import NewCaseNamePage from "../../pom/cases/new/newCaseName.page"
+import CaseCreatedPage from "../../pom/cases/caseCreated.page"
 
-import CasePage from "../../pom/cases/case.page";
-import CaseBusinessesPage from "../../pom/cases/show/casesBusinesses.page";
-import CaseNewBusinessTypePage from "../../pom/cases/new/business/caseNewBusinessType.page";
-import CaseNewBusinessFormPage from "../../pom/cases/new/business/caseNewBusinessForm.page";
+import CasePage from "../../pom/cases/case.page"
+import CaseBusinessesPage from "../../pom/cases/show/casesBusinesses.page"
+import CaseNewBusinessTypePage from "../../pom/cases/new/business/caseNewBusinessType.page"
+import CaseNewBusinessFormPage from "../../pom/cases/new/business/caseNewBusinessForm.page"
 
 describe("Create case", () => {
   beforeEach(() => {
@@ -39,13 +39,15 @@ describe("Create case", () => {
     })
   })
 
-  context("when creating a product first", function() {
+  context("when creating a product first", function () {
     beforeEach(() => {
       ProductFormPage.goto()
       ProductFormPage.assertPageTitle()
-      cy.fixture('products.json').as('products').then((products) => {
-        ProductFormPage.createProductFromFixture(products.iphone)
-      })
+      cy.fixture("products.json")
+        .as("products")
+        .then((products) => {
+          ProductFormPage.createProductFromFixture(products.iphone)
+        })
       ProductCreatedPage.assertPageTitle()
       ProductCreatedPage.clickToProductPage()
       ProductPage.clickCreateNewCase()
@@ -64,20 +66,22 @@ describe("Create case", () => {
       NewCaseReferencePage.clickContinue()
       NewCaseNamePage.assertPageTitle()
 
-      let caseName =  `Test case ${Date.now()}`
+      let caseName = `Test case ${Date.now()}`
       NewCaseNamePage.fillName(caseName)
       NewCaseNamePage.clickSave()
 
       CaseCreatedPage.assertPageTitle()
     })
 
-    context('with a case already created', () => {
+    context("with a case already created", () => {
       beforeEach(() => {
         ProductFormPage.goto()
         ProductFormPage.assertPageTitle()
-        cy.fixture('products.json').as('products').then((products) => {
-          ProductFormPage.createProductFromFixture(products.iphone)
-        })
+        cy.fixture("products.json")
+          .as("products")
+          .then((products) => {
+            ProductFormPage.createProductFromFixture(products.iphone)
+          })
         ProductCreatedPage.assertPageTitle()
         ProductCreatedPage.clickToProductPage()
         ProductPage.clickCreateNewCase()
@@ -94,7 +98,7 @@ describe("Create case", () => {
         NewCaseReferencePage.clickContinue()
         NewCaseNamePage.assertPageTitle()
 
-        let caseName =  `Test case ${Date.now()}`
+        let caseName = `Test case ${Date.now()}`
         NewCaseNamePage.fillName(caseName)
         NewCaseNamePage.clickSave()
 
@@ -102,7 +106,7 @@ describe("Create case", () => {
         CaseCreatedPage.clickToCasePage()
       })
 
-      it('a customer can add a business', () => {
+      it("a customer can add a business", () => {
         CasePage.assertPageTitle()
         CasePage.clickBusinessessTab()
         CaseBusinessesPage.assertPageTitle()
@@ -111,9 +115,11 @@ describe("Create case", () => {
         CaseNewBusinessTypePage.chooseOnlineMarketplace()
         CaseNewBusinessTypePage.clickContinue()
 
-        cy.fixture('businesses.json').as('businesses').then((businesses) => {
-          CaseNewBusinessFormPage.fillForm(businesses.ebay)
-        })
+        cy.fixture("businesses.json")
+          .as("businesses")
+          .then((businesses) => {
+            CaseNewBusinessFormPage.fillForm(businesses.ebay)
+          })
 
         CaseNewBusinessFormPage.clickSave()
         CaseBusinessesPage.assertBusinessCreated()

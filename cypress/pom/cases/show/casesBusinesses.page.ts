@@ -10,7 +10,7 @@ class CaseBusinessesPage {
   }
 
   assertBusinessCreated() {
-    cy.get('.govuk-notification-banner').should("contain", "The business was created")
+    cy.get(".govuk-notification-banner").should("contain", "The business was created")
   }
 
   clickAddBusiness() {
@@ -18,4 +18,4 @@ class CaseBusinessesPage {
   }
 }
 
-export default new CaseBusinessesPage
+export default new CaseBusinessesPage()

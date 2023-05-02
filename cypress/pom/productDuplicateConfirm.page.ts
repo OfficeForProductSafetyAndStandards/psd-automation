@@ -18,4 +18,4 @@ class ProductDuplicateConfirmPage {
   }
 }
 
-export default new ProductDuplicateConfirmPage
+export default new ProductDuplicateConfirmPage()

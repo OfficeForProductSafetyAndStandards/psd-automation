@@ -1,10 +1,12 @@
+/// <reference types="cypress"/>
+
 class CaseCreatedPage {
   assertPageTitle() {
-    cy.get('.govuk-panel__title').should("contain", "Case created")
+    cy.get(".govuk-panel__title").should("contain", "Case created")
   }
 
   clickToCasePage() {
-    cy.get('.govuk-body-l > .govuk-link').click()
+    cy.get(".govuk-body-l > .govuk-link").click()
   }
 }
 

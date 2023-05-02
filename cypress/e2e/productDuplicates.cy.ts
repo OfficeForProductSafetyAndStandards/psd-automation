@@ -52,29 +52,34 @@ describe("Creating a product & ensuring no duplicates", () => {
 
         ProductFormPage.assertPageTitle()
 
-        cy.fixture('products.json').as('products').then((products) => {
-          ProductFormPage.createProductFromFixture(products.iphone)
-          ProductCreatedPage.assertPageTitle()
-        })
+        cy.fixture("products.json")
+          .as("products")
+          .then((products) => {
+            ProductFormPage.createProductFromFixture(products.iphone)
+            ProductCreatedPage.assertPageTitle()
+          })
 
         // Now try to create a new product with the same barcode
         ProductsPage.goto()
         ProductsPage.clickNew()
         ProductDuplicateCheckPage.assertPageTitle()
         ProductDuplicateCheckPage.chooseYes()
-        cy.fixture('products.json').as('products').then((products) => {
-          ProductDuplicateCheckPage.fillBarcode(products.iphone.barcode)
-        })
+        cy.fixture("products.json")
+          .as("products")
+          .then((products) => {
+            ProductDuplicateCheckPage.fillBarcode(products.iphone.barcode)
+          })
         ProductDuplicateCheckPage.clickContinue()
 
         ProductDuplicateConfirmPage.assertPageTitle()
         ProductDuplicateConfirmPage.chooseYes()
         ProductDuplicateConfirmPage.clickContinue()
 
-        cy.fixture('products.json').as('products').then((products) => {
-          ProductPage.assertName(products.iphone.name)
-        })
-
+        cy.fixture("products.json")
+          .as("products")
+          .then((products) => {
+            ProductPage.assertName(products.iphone.name)
+          })
       })
     })
   })

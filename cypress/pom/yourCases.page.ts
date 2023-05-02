@@ -10,4 +10,4 @@ class YourCasesPage {
   }
 }
 
-export default new YourCasesPage
+export default new YourCasesPage()

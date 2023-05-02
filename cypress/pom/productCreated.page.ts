@@ -6,4 +6,4 @@ class ProductCreatedPage {
   }
 }
 
-export default new ProductCreatedPage
+export default new ProductCreatedPage()

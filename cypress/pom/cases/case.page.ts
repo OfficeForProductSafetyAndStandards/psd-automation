@@ -6,7 +6,7 @@ class CasePage {
   }
 
   assertPageTitle() {
-    cy.get('.govuk-heading-l').should("contain", "Case")
+    cy.get(".govuk-heading-l").should("contain", "Case")
   }
 
   clickBusinessessTab() {

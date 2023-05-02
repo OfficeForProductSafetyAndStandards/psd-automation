@@ -1,4 +1,4 @@
-class NewCasePage {
+class CaseCreatedPage {
   assertPageTitle() {
     cy.get('.govuk-panel__title').should("contain", "Case created")
   }
@@ -8,4 +8,4 @@ class NewCasePage {
   }
 }
 
-export default new NewCasePage()
+export default new CaseCreatedPage()

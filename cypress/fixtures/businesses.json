@@ -1,0 +1,20 @@
+{
+  "ebay": {
+    "legalName": "eBay Inc.",
+    "tradingName": "eBay",
+    "companyNumber": "123456789",
+    "address": {
+      "addressLineOne": "2025 Hamilton Avenue",
+      "addressLineTwo": "",
+      "city": "San Jose",
+      "postcode": "95125",
+      "country": "United States"
+    },
+    "contact": {
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phoneNumber": "+1 123-456-7890",
+      "jobTitle": "Customer Support Specialist"
+    }
+  }
+}

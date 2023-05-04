@@ -4,8 +4,8 @@ const createBundler = require("@bahmutov/cypress-esbuild-preprocessor")
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      on('file:preprocessor', createBundler())
+      on("file:preprocessor", createBundler())
     },
     baseUrl: "http://localhost:3000",
-  }
+  },
 })

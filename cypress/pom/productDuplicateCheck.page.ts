@@ -1,25 +1,25 @@
 /// <reference types="cypress"/>
 
 class ProductDuplicateCheckPage {
-  static assertPageTitle() {
+  assertPageTitle() {
     cy.get("h1").should("contain", "Do you have the product barcode number?")
   }
 
-  static chooseYes() {
+  chooseYes() {
     cy.get("[data-cy='barcode-yes']").check()
   }
 
-  static chooseNo() {
+  chooseNo() {
     cy.get("[data-cy='barcode-no']").check()
   }
 
-  static clickContinue() {
+  clickContinue() {
     cy.get("[data-cy='continue']").click()
   }
 
-  static fillBarcode(barcode: string) {
+  fillBarcode(barcode: string) {
     cy.get("[data-cy='barcode']").type(barcode)
   }
 }
 
-export default ProductDuplicateCheckPage
+export default new ProductDuplicateCheckPage()

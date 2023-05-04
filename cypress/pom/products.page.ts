@@ -1,17 +1,17 @@
 /// <reference types="cypress"/>
 
 class ProductsPage {
-  static goto() {
+  goto() {
     cy.visit("/products/all-products")
   }
 
-  static assertPageTitle() {
+  assertPageTitle() {
     cy.get("h1").should("contain", "All products")
   }
 
-  static clickNew() {
+  clickNew() {
     cy.get("[data-cy='new-product']").click()
   }
 }
 
-export default ProductsPage
+export default new ProductsPage()

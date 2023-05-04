@@ -1,9 +1,9 @@
 /// <reference types="cypress"/>
 
 class ProductCreatedPage {
-  static assertPageTitle() {
+  assertPageTitle() {
     cy.get("h1").should("contain", "Product record created")
   }
 }
 
-export default ProductCreatedPage
+export default new ProductCreatedPage()

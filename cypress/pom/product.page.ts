@@ -1,9 +1,13 @@
 /// <reference types="cypress"/>
 
 class ProductPage {
-  static assertName(name: string) {
+  assertName(name: string) {
     cy.get("[data-cy='product-name']").should("contain", name)
+  }
+
+  clickCreateNewCase() {
+    cy.get("[data-cy='create-new-case']").click()
   }
 }
 
-export default ProductPage
+export default new ProductPage()

@@ -1,15 +1,14 @@
 /// <reference types="cypress"/>
 
-
 class UserDeclarationPage {
-  static assertPageTitle() {
+  assertPageTitle() {
     cy.get("h1").should("contain", "User declaration")
   }
 
-  static confirmDeclaration() {
+  confirmDeclaration() {
     cy.get("#agree").check()
     cy.get("#main-content > .govuk-button").click()
   }
 }
 
-export default UserDeclarationPage
+export default new UserDeclarationPage()

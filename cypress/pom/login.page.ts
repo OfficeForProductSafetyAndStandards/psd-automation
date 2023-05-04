@@ -3,37 +3,40 @@
 import UserDeclarationPage from "./userDeclaration.page"
 
 class LoginPage {
-  static goto() {
+  goto() {
     cy.visit("/sign-in")
   }
 
-  static assertPageTitle() {
+  assertPageTitle() {
     cy.get("h1").should("contain", "Sign in")
   }
 
-  static loginAsOpss() {
-    cy.fixture('users.json').as('users').then((users) => {
-      LoginPage.fillEmail(users.opss.email)
-      LoginPage.fillPassword(users.opss.password)
-    })
+  loginAsOpss() {
+    cy.session("opss", () => {
+      cy.visit("/sign-in")
+      cy.fixture("users.json")
+        .as("users")
+        .then((users) => {
+          this.fillEmail(users.opss.email)
+          this.fillPassword(users.opss.password)
+        })
 
-    LoginPage.submit()
+      this.submit()
+    })
     // UserDeclarationPage.confirmDeclaration()
   }
 
-  static fillEmail(email: string) {
+  fillEmail(email: string) {
     cy.get("#email").type(email)
   }
 
-  static fillPassword(password: string) {
+  fillPassword(password: string) {
     cy.get("#password").type(password)
   }
 
-  static submit() {
+  submit() {
     cy.get("#new_user > .govuk-button").click()
   }
-
-
 }
 
-export default LoginPage
+export default new LoginPage()

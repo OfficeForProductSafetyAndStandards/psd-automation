@@ -1,14 +1,13 @@
 /// <reference types="cypress"/>
 
-
 class YourCasesPage {
-  static goto() {
+  goto() {
     cy.visit("/cases/your-cases")
   }
 
-  static assertPageTitle() {
+  assertPageTitle() {
     cy.get("h1").should("contain", "Your cases")
   }
 }
 
-export default YourCasesPage
+export default new YourCasesPage()

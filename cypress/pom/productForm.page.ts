@@ -1,20 +1,21 @@
 /// <reference types="cypress"/>
-import { Product } from '../support/types';
+
+import { Product } from "../support/types"
 
 class ProductFormPage {
-  static goto() {
+  goto() {
     cy.visit("/products/new")
   }
 
-  static assertPageTitle() {
+  assertPageTitle() {
     cy.get("h1").should("contain", "Create a product record")
   }
 
-  static assertBarcode(barcode: string) {
+  assertBarcode(barcode: string) {
     cy.get("#barcode").should("have.value", barcode)
   }
 
-  static createProductFromFixture(product: Product) {
+  createProductFromFixture(product: Product) {
     cy.get("#name").type(product.name)
     cy.get("#category").select(product.category)
     cy.get("#subcategory").type(product.subcategory)
@@ -29,7 +30,6 @@ class ProductFormPage {
 
     cy.get("[data-cy='save']").click()
   }
-
 }
 
-export default ProductFormPage
+export default new ProductFormPage()

@@ -1,17 +1,20 @@
 {
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^17.1.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "cypress": "^12.9.0",
-    "esbuild": "^0.17.16",
+    "cypress": "latest",
     "prettier": "2.8.7",
-    "typescript": "^5.0.4"
+    "ts-loader": "latest",
+    "typescript": "latest",
+    "webpack": "^5.82.0",
+    "webpack-dev-server": "^4.15.0"
   },
   "name": "psd-automation",
   "version": "1.0.0",
   "description": "Cypress specs for Product Safety Database",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
+    "test": "cypress run --spec \"**/*.feature\"",
     "open": "cypress open",
     "lint:write": "prettier --write **/*.{js,ts}",
     "lint": "prettier --check **/*.{js,ts}"

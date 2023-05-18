@@ -4,6 +4,8 @@
     "lib": ["esnext", "dom"],
     "types": ["cypress", "node"],
     "typeRoots": ["./support"],
+    "esModuleInterop": true,
+    "moduleResolution": "node16"
   },
   "include": ["**/*.ts"]
 }

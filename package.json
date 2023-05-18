@@ -1,8 +1,7 @@
 {
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@badeball/cypress-cucumber-preprocessor": "^17.1.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "@cypress/webpack-preprocessor": "latest",
     "cypress": "latest",
     "prettier": "2.8.7",
     "ts-loader": "latest",
